@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Hospital Appointment System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo">🏥 City Care Hospital</div>
+
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="appointment.html">Book</a></li>
+        <li><a href="appointments.html">Appointments</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+</nav>
+
+<div class="form-container">
+
+    <h2>Book Appointment</h2>
+
+    <form id="appointmentForm">
+
+    <input
+        type="text"
+        id="patientName"
+        placeholder="Patient Name"
+        required>
+
+    <input
+        type="number"
+        id="age"
+        placeholder="Age"
+        required>
+
+    <select id="doctor" required>
+        <option value="">Select Doctor</option>
+        <option>Dr. Sharma</option>
+        <option>Dr. Gupta</option>
+        <option>Dr. Verma</option>
+    </select>
+
+    <input
+        type="date"
+        id="date"
+        required>
+
+    <button type="submit">
+        Book Appointment
+    </button>
+
+</form>
+
+</div>
+<script type="module">
+
+import AppointmentController
+from "../js/controllers/AppointmentController.js";
+
+document
+.getElementById("appointmentForm")
+.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    AppointmentController.bookAppointment();
+
+});
+
+</script>
+</body>
+</html>
